@@ -18,5 +18,5 @@ uninstall:
 install:
 	sudo mkdir -p /home/cogroid/local/lib/i386.org
 	sudo mkdir -p /usr/local/lib/opencog
-	sudo cp -f /usr/local/lib/libcogutil.so /home/cogroid/local/lib/i386.org/
+	sudo cp -f /usr/local/lib/opencog/libcogutil.so /home/cogroid/local/lib/i386.org/
 	sudo cp -f ${ROOT_DIR}/build/opencog/util/libcogutil.so /usr/local/lib/opencog/
