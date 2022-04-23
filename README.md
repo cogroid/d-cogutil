@@ -50,6 +50,22 @@ make
 sudo make install
 ```
 
+###### GLIBC == 2.27
+
+```
+ldd --version
+```
+
+* Ubuntu 18.04
+
+###### GCC 32 bit
+
+```
+sudo apt install gcc-multilib
+
+sudo apt install g++-multilib
+```
+
 ###### cxxtest
 > Unit test framework
 > https://cxxtest.com/ | `apt-get install cxxtest`
@@ -78,6 +94,21 @@ a regular OpenCog developer.
 
 Building Cogutil
 -----------------
+
+### Prepare for i386 machine
+
+```
+cd ${COGUTIL_DIR}/make/i386
+make
+```
+
+### Prepare for x64 machine
+
+```
+cd ${COGUTIL_DIR}/make/x64
+make
+```
+
 Perform the following steps at the shell prompt:
 ```
     cd to project root dir
