@@ -1,22 +1,18 @@
-ROOT_DIR=../../
-
-all: src_update lib_copy
-
-src_update:
-	cp -f ${ROOT_DIR}/make/i386/OpenCogGccOptions.cmake ${ROOT_DIR}/cmake/
-
-lib_copy:
-	sudo mkdir -p /home/cogroid/local/lib/i386
-	sudo cp -rf ${ROOT_DIR}/make/i386/lib/* /home/cogroid/local/lib/i386/
-
-clean: uninstall
-	cp -f ${ROOT_DIR}/make/i386/org/OpenCogGccOptions.cmake ${ROOT_DIR}/cmake/
-
-uninstall:
-	sudo cp -f /home/cogroid/local/lib/i386.org/libcogutil.so /usr/local/lib/opencog/
+all:
+	sudo mkdir -p /home/cogroid/local/d-cogutil/i386
+	sudo mkdir -p /home/cogroid/local/d-cogutil/i386/lib
+	sudo cp -rf ./lib/* /home/cogroid/local/d-cogutil/i386/lib/
+	cp -f ./OpenCogGccOptions.cmake ../../cmake/
+	mkdir -p ../../build
+	cd ../../build; \
+	cmake \
+	-DCMAKE_INSTALL_PREFIX="/home/cogroid/local/d-cogutil/i386" \
+	..; \
+	make
 
 install:
-	sudo mkdir -p /home/cogroid/local/lib/i386.org
-	sudo mkdir -p /usr/local/lib/opencog
-	sudo cp -f /usr/local/lib/opencog/libcogutil.so /home/cogroid/local/lib/i386.org/
-	sudo cp -f ${ROOT_DIR}/build/opencog/util/libcogutil.so /usr/local/lib/opencog/
+	sudo sh -c 'cd ../../build; \
+	make install;'
+
+clean:
+	rm -rf ../../build

@@ -11,7 +11,7 @@ IF (CMAKE_COMPILER_IS_GNUCXX)
 	IF (APPLE)
 		CMAKE_POLICY(SET CMP0042 NEW)  # Something about MACOSX_RPATH
 
-		SET(CMAKE_C_FLAGS "-Wall -Wno-long-long -Wno-conversion -m32 -march=i386 -L/home/cogroid/local/lib/i386")
+		SET(CMAKE_C_FLAGS "-Wall -Wno-long-long -Wno-conversion -m32 -march=i386 -L/home/cogroid/local/d-cogutil/i386/lib")
 		SET(CMAKE_C_FLAGS_DEBUG "-O0 -g")
 		SET(CMAKE_C_FLAGS_PROFILE "-O0 -pg")
 		SET(CMAKE_C_FLAGS_RELEASE "-O2 -g0")
@@ -23,7 +23,7 @@ IF (CMAKE_COMPILER_IS_GNUCXX)
 		SET(NO_AS_NEEDED "")
 
 	ELSE (APPLE)
-		SET(CMAKE_C_FLAGS "-Wall -fPIC -fstack-protector -m32 -march=i386 -L/home/cogroid/local/lib/i386")
+		SET(CMAKE_C_FLAGS "-Wall -fPIC -fstack-protector -m32 -march=i386 -L/home/cogroid/local/d-cogutil/i386/lib")
 		# SET(CMAKE_C_FLAGS "-Wl,--copy-dt-needed-entries")
 		SET(CMAKE_C_FLAGS_DEBUG "-O0 -ggdb3")
 		SET(CMAKE_C_FLAGS_PROFILE "-O2 -g3 -pg")
@@ -55,7 +55,7 @@ IF (CMAKE_COMPILER_IS_GNUCXX)
 	# 2) -fopenmp for multithreading support
 	#
 	# 3) -std=gnu++17 for C++17 and GNU extensions support
-	SET(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -Wno-variadic-macros -fopenmp -std=gnu++17 -m32 -L/home/cogroid/local/lib/i386 -march=i386")
+	SET(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -Wno-variadic-macros -fopenmp -std=gnu++17 -m32 -L/home/cogroid/local/d-cogutil/i386/lib -march=i386")
 
 	SET(CMAKE_CXX_FLAGS_DEBUG ${CMAKE_C_FLAGS_DEBUG})
 	SET(CMAKE_CXX_FLAGS_PROFILE ${CMAKE_C_FLAGS_PROFILE})
