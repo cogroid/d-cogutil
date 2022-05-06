@@ -95,19 +95,43 @@ a regular OpenCog developer.
 Building Cogutil
 -----------------
 
-### Prepare for i386 machine
+### Build for x64 machine
 
 ```
-cd ${COGUTIL_DIR}/make/i386
-make
-```
-
-### Prepare for x64 machine
-
-```
+sudo apt update
 cd ${COGUTIL_DIR}/make/x64
-make
+make > build.log&
 ```
+
+```
+sudo apt update
+cd ${COGUTIL_DIR}/make/x64
+make install
+```
+
+```
+Built files are at /home/cogroid/local/d-cogutil/x64
+```
+
+### Build for i386 machine
+
+```
+sudo apt update
+cd ${COGUTIL_DIR}/make/i386
+make > build.log&
+```
+
+```
+sudo apt update
+cd ${COGUTIL_DIR}/make/i386
+make install
+```
+
+```
+Built files are at /home/cogroid/local/d-cogutil/i386
+```
+
+### Build for other machine
 
 Perform the following steps at the shell prompt:
 ```
