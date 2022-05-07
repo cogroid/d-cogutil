@@ -131,6 +131,24 @@ make install
 Built files are at /home/cogroid/local/d-cogutil/i386
 ```
 
+### Build for armv7 machine
+
+```
+sudo apt update
+cd ${COGUTIL_DIR}/make/armv7
+make > build.log&
+```
+
+```
+sudo apt update
+cd ${COGUTIL_DIR}/make/armv7
+make install
+```
+
+```
+Built files are at /home/cogroid/local/d-cogutil/armv7
+```
+
 ### Build for other machine
 
 Perform the following steps at the shell prompt:
